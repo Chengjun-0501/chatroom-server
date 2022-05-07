@@ -134,20 +134,4 @@ public class MyWebSocketController {
     public void sendMessage(String message) throws IOException {
         this.session.getBasicRemote().sendText(message);
     }
-
-//    // 获取在线人数
-//    public static synchronized int getOnlineCount(){
-//        return onlineCount;
-//    }
-//
-//    // 添加在线人+1
-//    public static synchronized void addOnlineCount(){
-//        onlineCount ++;
-//    }
-//
-//    // 减少在线人-1
-//    public static synchronized void subOnlineCount(){
-//        onlineCount --;
-//    }
-
 }
