@@ -5,12 +5,12 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-  devtools:
-    restart:
-      enabled: true  #设置开启热部署
-      additional-paths: src/main/java #重启目录
-    freemarker:
-      cache: false    #页面不加载缓存，修改即时生效
+#  devtools:
+#    restart:
+#      enabled: true  #设置开启热部署
+#      additional-paths: src/main/java #重启目录
+#    freemarker:
+#      cache: false    #页面不加载缓存，修改即时生效
 
 
 # web配置

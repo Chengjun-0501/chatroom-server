@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e769c093-9893-4cc0-8900-6520ae25da42" name="Default Changelist" comment="05-08 22:27">
+    <list default="true" id="e769c093-9893-4cc0-8900-6520ae25da42" name="Default Changelist" comment="05-08 22:30">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/SpringbootProjectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/SpringbootProjectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,7 +63,7 @@
       <recent name="com.example.springbootproject.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootProjectApplication (1)">
+  <component name="RunManager" selected="JUnit.SpringbootProjectApplicationTests.s (1)">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -87,6 +88,22 @@
       <option name="PACKAGE_NAME" value="com.example.springbootproject" />
       <option name="MAIN_CLASS_NAME" value="com.example.springbootproject.SpringbootProjectApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootProjectApplicationTests.s (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chatroom-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example" />
+      <option name="MAIN_CLASS_NAME" value="com.example.SpringbootProjectApplicationTests" />
+      <option name="METHOD_NAME" value="s" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -131,9 +148,11 @@
       <item itemvalue="JUnit.SpringbootProjectApplicationTests.s" />
       <item itemvalue="Spring Boot.SpringbootProjectApplication (1)" />
       <item itemvalue="Spring Boot.SpringbootProjectApplication" />
+      <item itemvalue="JUnit.SpringbootProjectApplicationTests.s (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SpringbootProjectApplicationTests.s (1)" />
         <item itemvalue="Spring Boot.SpringbootProjectApplication" />
         <item itemvalue="JUnit.SpringbootProjectApplicationTests.s" />
         <item itemvalue="JUnit.SpringbootProjectApplicationTests.contextLoads" />
@@ -177,7 +196,7 @@
       <workItem from="1651584015164" duration="20641000" />
       <workItem from="1651924704560" duration="9388000" />
       <workItem from="1651975524716" duration="8005000" />
-      <workItem from="1652019791950" duration="415000" />
+      <workItem from="1652019791950" duration="2655000" />
     </task>
     <task id="LOCAL-00001" summary="05-07 21:25">
       <created>1651929943680</created>
@@ -235,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652020040021</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="05-08 22:30">
+      <created>1652020263609</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652020263609</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +290,8 @@
     <MESSAGE value="05-08 16:42" />
     <MESSAGE value="05-08 21:18" />
     <MESSAGE value="05-08 22:27" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-08 22:27" />
+    <MESSAGE value="05-08 22:30" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-08 22:30" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

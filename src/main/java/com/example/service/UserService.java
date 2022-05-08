@@ -69,10 +69,7 @@ public class UserService {
 
     //查看用户信息
     public Result selectuserinfo(int userid){
-//        Result result = new Result();
-//        result.setStatus(200);
-//        result.setObj(this.userDao.selectuserinfo(userid));
-        String key = "userinfo_"+userid;
+        String key = "user:info_"+userid;
 
         ValueOperations<String,Result> operations = redisTemplate.opsForValue();
 
@@ -126,8 +123,15 @@ public class UserService {
 
 //    修改用户名
     public Result updateusername(int userid,String username){
+        String key = "user:info_"+userid;
+
         Result result = new Result();
         this.userDao.updateusername(username,userid);
+        boolean haskey = redisTemplate.hasKey(key);
+        if (haskey){
+            redisTemplate.delete(key);
+        }
+
         result.setStatus(200);
         result.setMsg("修改成功");
         return result;
