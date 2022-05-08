@@ -4,46 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e769c093-9893-4cc0-8900-6520ae25da42" name="Default Changelist" comment="05-08 21:18">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="e769c093-9893-4cc0-8900-6520ae25da42" name="Default Changelist" comment="05-08 22:27">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/SpringbootProjectApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/AuthorizationException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/Message.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/MyFriend.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/SignInResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/bean/UserRoleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/config/CorsInterceptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/config/MyWebSocketConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/config/RedisConfiguration$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/config/RedisConfiguration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/config/WebMvcConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/controller/MyWebSocketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/dao/MessageDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/dao/MyFriendDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/dao/RoomDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/service/redis/RedisHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/springbootproject/service/redis/RedisHelperImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/springbootproject/SpringbootProjectApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CompilerWorkspaceConfiguration">
-    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,6 +177,7 @@
       <workItem from="1651584015164" duration="20641000" />
       <workItem from="1651924704560" duration="9388000" />
       <workItem from="1651975524716" duration="8005000" />
+      <workItem from="1652019791950" duration="415000" />
     </task>
     <task id="LOCAL-00001" summary="05-07 21:25">
       <created>1651929943680</created>
@@ -257,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652015899916</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="05-08 22:27">
+      <created>1652020040021</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652020040021</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +263,8 @@
     <MESSAGE value="05-08 01:45" />
     <MESSAGE value="05-08 16:42" />
     <MESSAGE value="05-08 21:18" />
-    <option name="LAST_COMMIT_MESSAGE" value="05-08 21:18" />
+    <MESSAGE value="05-08 22:27" />
+    <option name="LAST_COMMIT_MESSAGE" value="05-08 22:27" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

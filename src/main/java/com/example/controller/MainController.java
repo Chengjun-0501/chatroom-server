@@ -140,7 +140,6 @@ public class MainController {
 //        return new Result();
 //        StpUtil.checkLogin();
         int id = StpUtil.getLoginIdAsInt();
-
         return userService.selectuserinfo(id);
     }
 
