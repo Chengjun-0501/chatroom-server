@@ -123,7 +123,7 @@ public class MainController {
         return result;
     }
 
-    @Cacheable(cacheNames = "userService.selectuserinfo(id)", unless = "#result==null")  //自动根据方法生成缓存
+    @Cacheable(cacheNames = "getUserInfo", unless = "#result==null")  //自动根据方法生成缓存
     @ResponseBody
     @PostMapping("/user/info")
     public Result getUserInfo(@RequestBody JSONObject obj){
