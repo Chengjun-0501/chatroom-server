@@ -87,27 +87,6 @@ public class UserService {
         result.setObj(this.userDao.selectuserroom(userid));
         return result;
     }
-//    //    查看好友
-//    public Result selectuserfriend(int userid){
-//        Result result = new Result();
-//        List<String> userfriendList = new ArrayList(userDao.selectuserfriend(userid));
-//        String userfriend = String.join(",",  userfriendList.toArray(new String[userfriendList.size()]));
-//        result.setStatus(200);
-//        result.setMsg(userfriend);
-//
-//        return result;
-//    }
-//
-//    //    查看聊天室
-//    public Result selectuserroom(int userid){
-//        Result result = new Result();
-//        List<String> selectuserroomList = new ArrayList(userDao.selectuserroom(userid));
-//        String selectuserroom = String.join(",",  selectuserroomList.toArray(new String[selectuserroomList.size()]));
-//        result.setStatus(200);
-//        result.setMsg(selectuserroom);
-//
-//        return result;
-//    }
 
     //修改用户头像
     public Result updateuserimg(int userid,String img){
