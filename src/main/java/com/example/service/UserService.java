@@ -6,9 +6,12 @@ import com.example.dao.MyFriendDao;
 import com.example.dao.RoomDao;
 import com.example.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserService {
@@ -23,6 +26,9 @@ public class UserService {
 
     @Autowired
     RoomDao roomDao;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
 //    登录
     public Result login(int userid, String userpsword){
@@ -63,10 +69,31 @@ public class UserService {
 
     //查看用户信息
     public Result selectuserinfo(int userid){
-        Result result = new Result();
-        result.setStatus(200);
-        result.setObj(this.userDao.selectuserinfo(userid));
-        return result;
+//        Result result = new Result();
+//        result.setStatus(200);
+//        result.setObj(this.userDao.selectuserinfo(userid));
+        String key = "userinfo_"+userid;
+
+        ValueOperations<String,Result> operations = redisTemplate.opsForValue();
+
+        //判断redis中是否有键为key的缓存
+        boolean hasKey = redisTemplate.hasKey(key);
+
+        if (hasKey){
+            Result result = operations.get(key);
+            System.out.println("从缓存查询到"+key);
+            return result;
+        } else {
+            Result result = new Result();
+            result.setStatus(200);
+            result.setObj(this.userDao.selectuserinfo(userid));
+            System.out.println("从数据库查询到"+key);
+
+            // 写入缓存
+            operations.set(key,result,5, TimeUnit.HOURS);  //五小时
+            return result;
+        }
+
     }
 
     //查看用户好友

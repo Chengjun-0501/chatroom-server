@@ -4,6 +4,7 @@ import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.secure.SaSecureUtil;
 import cn.dev33.satoken.stp.StpUtil;
 import com.example.bean.Result;
+import com.example.bean.User;
 import com.example.dao.MessageDao;
 import com.example.dao.UserDao;
 import com.example.service.UserService;
@@ -123,7 +124,7 @@ public class MainController {
         return result;
     }
 
-    @Cacheable(cacheNames = "getUserInfo", unless = "#result==null")  //自动根据方法生成缓存
+    @SaCheckLogin
     @ResponseBody
     @PostMapping("/user/info")
     public Result getUserInfo(@RequestBody JSONObject obj){
@@ -139,6 +140,7 @@ public class MainController {
 //        return new Result();
 //        StpUtil.checkLogin();
         int id = StpUtil.getLoginIdAsInt();
+
         return userService.selectuserinfo(id);
     }
 
