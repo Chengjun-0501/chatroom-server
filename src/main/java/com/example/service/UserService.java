@@ -49,7 +49,6 @@ public class UserService {
     }
 
 //    注册
-//    public Result signin(int userid,String username,String userimg,String userpsword){
     public Result signin(String username,String userpsword){
         Result result = new Result();
         long nowDate = new Date().getTime();   //利用时间戳生成随机数
@@ -59,7 +58,6 @@ public class UserService {
             result.setStatus(404);
             result.setMsg("该账号已存在");
         }else {
-//            this.userDao.insertuser(userid,username,userimg,userpsword);
             this.userDao.insertuser(userid,username,userpsword);
             result.setStatus(200);
             result.setMsg(String.valueOf(userid));

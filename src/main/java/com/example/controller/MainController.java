@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
@@ -40,7 +41,7 @@ public class MainController {
 
     public HttpSession httpSession;
 //    线程安全集合
-    public static ConcurrentHashMap<Integer, HttpSession> httpSessionMap = new ConcurrentHashMap<Integer,HttpSession>();
+//    public static ConcurrentHashMap<Integer, HttpSession> httpSessionMap = new ConcurrentHashMap<Integer,HttpSession>();
 
     @ResponseBody
     @PostMapping("/login/in")
@@ -51,7 +52,6 @@ public class MainController {
         StpUtil.login(userid);
         // AES
         String psword = SaSecureUtil.aesEncrypt(publicKey, obj.getString("userpsword"));
-//        System.out.println(psword);
 //        this.httpSession = request.getSession();   //获取当前session，如果没有则创建
 //        this.httpSession.setAttribute("userid",userid);   //在session中存储用户id
 //        httpSessionMap.put(userid, this.httpSession);   //将用户id及对应的session存入集合
@@ -264,9 +264,9 @@ public class MainController {
         long nowDate = new Date().getTime();   //利用时间戳生成随机数
         int roomId= new Long(nowDate).intValue();
         String roomname = obj.getString("name");
-        Date dNow = new Date( );
-        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");   //格式化日期
-        System.out.println("user-createroom    "+id);
-        return userService.createroom(id,roomId,roomname,ft.format(dNow));
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println("user-createroom    "+id+df.format(localDateTime));
+        return userService.createroom(id,roomId,roomname,df.format(localDateTime));
     }
 }

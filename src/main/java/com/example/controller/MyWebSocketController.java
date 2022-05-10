@@ -5,7 +5,6 @@ import com.example.service.UserService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
@@ -20,15 +19,12 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 import com.example.bean.MyFriend;
 
-@Controller
+
 @Component
 @ServerEndpoint(value = "/websocket/{myid}")
-//@ServerEndpoint(value = "/websocket")
 
 public class MyWebSocketController {
 //    private static Logger logger = Logger.getLogger(MyWebSocketConfig.class);
-    //线程安全的静态变量，表示在线连接数
-    private static volatile int onlineCount = 0;
 
     //用来存放每个客户端对应的WebSocketTest对象，适用于同时与多个客户端通信
     public static CopyOnWriteArraySet<MyWebSocketController> webSocketSet = new CopyOnWriteArraySet<MyWebSocketController>();
@@ -58,8 +54,6 @@ public class MyWebSocketController {
         this.session = session;
         webSocketSet.add(this);  // 添加到set中
         webSocketMap.put(myid,this);    // 添加到map中
-//        addOnlineCount();    // 添加在线人数
-//        System.out.println("新人 "+myid+" 加入，当前在线人数为："  + getOnlineCount());
         System.out.println("新人 "+myid+" 加入，当前在线人数为："  + webSocketMap.size());
 
     }
@@ -71,8 +65,6 @@ public class MyWebSocketController {
     public void onClose(Session closeSession){
         webSocketMap.remove(myid);
         webSocketSet.remove(this);
-//        subOnlineCount();
-//        System.out.println("有人离开，当前在线人数为：" + getOnlineCount());
         System.out.println("有人离开，当前在线人数为：" + webSocketMap.size());
 
     }
