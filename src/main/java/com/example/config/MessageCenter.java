@@ -22,7 +22,6 @@ public class MessageCenter {
      */
     private static BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
-
     private static volatile MessageCenter center;
 
     private MessageCenter(){}
