@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e769c093-9893-4cc0-8900-6520ae25da42" name="Default Changelist" comment="05-08 23:10">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/MyTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatroom-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/chatroom-server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/MyWebSocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/MyWebSocketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/SpringbootProjectApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,9 +142,9 @@
     <list>
       <item itemvalue="JUnit.SpringbootProjectApplicationTests.contextLoads" />
       <item itemvalue="JUnit.SpringbootProjectApplicationTests.s" />
+      <item itemvalue="JUnit.MyTests.s" />
       <item itemvalue="Spring Boot.SpringbootProjectApplication (1)" />
       <item itemvalue="Spring Boot.SpringbootProjectApplication" />
-      <item itemvalue="JUnit.MyTests.s" />
     </list>
     <recent_temporary>
       <list>
@@ -203,6 +194,10 @@
       <workItem from="1651975524716" duration="8005000" />
       <workItem from="1652019791950" duration="4132000" />
       <workItem from="1652209281922" duration="4650000" />
+      <workItem from="1652252977983" duration="2998000" />
+      <workItem from="1652469002469" duration="584000" />
+      <workItem from="1652518339429" duration="1771000" />
+      <workItem from="1652563678372" duration="260000" />
     </task>
     <task id="LOCAL-00001" summary="05-07 21:25">
       <created>1651929943680</created>
