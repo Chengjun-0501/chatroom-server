@@ -1,15 +1,13 @@
 package com.example.controller;
 
 import com.example.bean.Result;
+import com.example.config.MessageCenter;
 import com.example.service.UserService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
+import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
@@ -45,17 +43,37 @@ public class MyWebSocketController {
 //    }
 
     /**
+     * 为websocket注入实例
+     */
+    private static UserService userService;
+    @Autowired
+    public void setChatService(UserService userService) {
+        MyWebSocketController.userService = userService;
+    }
+
+    /**
      * 建立连接成功调用的方法
      */
     @OnOpen
     public void onOpen(@PathParam(value = "myid") String param,Session session) {
-//    public void onOpen(Session session) {
         myid = param;
-//        myid = StpUtil.getLoginIdAsString();
         System.out.println(myid);
         this.session = session;
         webSocketSet.add(this);  // 添加到set中
         webSocketMap.put(myid,this);    // 添加到map中
+
+/*
+        // 1.把每个客户端的session都保存起来，之后转发消息到所有客户端要用
+//        MessageCenter.addOnlineUser(userId,session);
+        MessageCenter.getInstance().addOnlineUser(userId,session);
+        // 2.查询本客户端（用户）上次登录前的消息（数据库查）
+        List<Message> list = MessageDao.queryByLastLogout(userId);
+        // 3.发送当前用户在上次登录后的消息
+        for (Message m : list) {
+            session.getBasicRemote().sendText(Util.serialize(m));
+        }
+*/
+
         System.out.println("新人 "+myid+" 加入，当前在线人数为："  + webSocketMap.size());
 
     }
@@ -69,15 +87,20 @@ public class MyWebSocketController {
         webSocketSet.remove(this);
         System.out.println("有人离开，当前在线人数为：" + webSocketMap.size());
 
+        /*
+            public void onClose(@PathParam("userId") Integer userId) {
+//1.本客户端关闭连接，要在之前保存的session集合中，删除
+//        MessageCenter.delOnlineUser(userId);
+        MessageCenter.getInstance().delOnlineUser(userId);
+        //2.建立连接要获取用户上次登录以后的消息，所以关闭长连接就是代表用户退出
+        //更新用户的上次登录时间
+        int n = UserDao.updateLastLogout(userId);
+         */
+
     }
 
 
-    private static UserService userService;
-//    为websocket注入实例
-    @Autowired
-    public void setChatService(UserService userService) {
-        MyWebSocketController.userService = userService;
-    }
+
 
 //    @ResponseBody
 //    @PostMapping("/main/online")
@@ -88,7 +111,6 @@ public class MyWebSocketController {
 //        } else {
 //            return "离线";
 //        }
-//
 //    }
 
     /**
@@ -124,6 +146,33 @@ public class MyWebSocketController {
             e.printStackTrace();
         }
     }
+
+//    @OnMessage
+//    public void onMessage(Session session, String message) {
+//        // 1.遍历保存的所有session，每个都发送消息
+////        MessageCenter.sendMessage(message);
+//        MessageCenter.getInstance().addMessage(message);
+//        // 2.消息还要保存在数据库，
+//        // （1）反序列化json字符串为message对象
+//        Message msg = Util.deserialize(message, Message.class);
+//        // （2）message设置接收消息的时间
+////        msg.setSendTime(new Date());
+//        // （3）插入数据库
+//        int n = MessageDao.insert(msg);
+//
+//        System.out.println("接收到的消息：" + message);
+//    }
+
+
+    @OnError
+    public void onError(@PathParam("userId") Integer userId, Throwable throwable) {
+        System.out.println("出错了");
+        //和关闭连接的操作一样
+//        MessageCenter.delOnlineUser(userId);
+        MessageCenter.getInstance().delOnlineUser(userId);
+        throwable.printStackTrace();
+    }
+
 
     public void sendMessage(String message) throws IOException {
         this.session.getBasicRemote().sendText(message);
