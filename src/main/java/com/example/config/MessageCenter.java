@@ -1,7 +1,5 @@
 package com.example.config;
 
-package org.example.model;
-
 import javax.websocket.Session;
 import java.io.IOException;
 import java.util.Enumeration;
